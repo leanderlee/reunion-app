@@ -1,0 +1,317 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #000;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 20px 0 0;
+    padding: 0px;
+    width: 100%;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+
+#screen-login {
+    display: block;
+    background-color: #4a9b7c;
+    position: fixed;
+    top: 20px; left: 0;
+    height: calc(100% - 20px);
+    width: 100%;
+}
+    #screen-login h1 {
+        text-align: center;
+        font-size: 36px;
+        color: #1f1f1f;
+    }
+    #screen-login #facebook {
+        width: 80%;
+        margin: 20px auto;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: #d8dfea;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #3b5998;
+    }
+#screen-user {
+    display: none;
+    position: fixed;
+    top: 20px; left: 0;
+    height: calc(100% - 20px);
+    width: 100%;
+}
+    #screen-user .overlay {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        background: rgba(0,0,0,0.7);
+    }
+    #screen-user .navigation {
+        position: relative;
+        background-color: #4a9b7c;
+        height: 44px;
+        line-height: 44px;
+        font-size: 18px;
+        color: #efefef;
+    }
+        #screen-user .navigation .button {
+        }
+            #screen-user .navigation .button:active {
+                color: #9f9f9f;
+                background-color: rgba(0,0,0,0.3);
+            }
+        #screen-user .navigation .back.button {
+            position: absolute;
+            top: 0; left: 0;
+            padding: 0 20px;
+        }
+        #screen-user .navigation .title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-align: center;
+        }
+        #screen-user .navigation .close.button,
+        #screen-user .navigation .save.button,
+        #screen-user .navigation #notif-button {
+            position: absolute;
+            top: 0; right: 0;
+            padding: 0 20px;
+        }
+        #screen-user .navigation #notif-button {
+        }
+            #screen-user .navigation #notif-button #bubble {
+                position: absolute;
+                top: 5px; right: 5px;
+                display: block;
+                font-size: 12px;
+                font-weight: bold;
+                line-height: 20px;
+                text-align: center;
+                height: 20px; min-width: 20px;
+                padding: 0 5px;
+                border-radius: 11px;
+                background-color: #c00;
+            }
+    #screen-user .subview.screen {
+        position: absolute;
+        height: calc(100% - 44px);
+        width: 100%;
+        left: 100%;
+        overflow: auto;
+        background-color: #dbdbdb;
+    }
+    #screen-user .modal.screen {
+        position: fixed;
+        z-index: 10;
+        top: 20px;
+        left: 100%;
+        height: calc(100% - 20px);
+        width: 100%;
+        overflow: auto;
+        background-color: #dbdbdb;
+    }
+#screen-user #screen-reunions {
+}
+    #screen-user #screen-reunions .create-reunion {
+        position: absolute;
+        z-index: 1;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -30px;
+        height: 60px;
+        width: 60px;
+        border-radius: 32px;
+        background-color: #4a9b7c;
+        background-image: url(plus.png);
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+        #screen-user #screen-reunions .create-reunion:active {
+            background-color: #5bac8d;
+        }
+    #screen-user #screen-reunions .no-reunions {
+        display: none;
+        text-align: center;
+    }
+    #screen-user #screen-reunions .reunions {
+        padding: 5px 0 75px;
+        height: 100%;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+        #screen-user #screen-reunions .reunions .reunion {
+            position: relative;
+            width: 90%;
+            height: 100px;
+            background: #efefef;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            margin: 10px auto;
+        }
+            #screen-user #screen-reunions .reunions .reunion:active {
+                background: #dfdfdf;
+            }
+            #screen-user #screen-reunions .reunions .reunion .reunion-name {
+                position: absolute;
+                left: 20px;
+                bottom: 20px;
+                max-width: 50%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            #screen-user #screen-reunions .reunions .reunion .reunion-members {
+                position: absolute;
+                max-width: 50%;
+                overflow: hidden;
+                right: 20px;
+                bottom: 10px;
+            }
+                #screen-user #screen-reunions .reunions .reunion .reunion-members .member {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
+                    background: #333;
+                }
+#screen-user #screen-details {
+}
+    #screen-user #screen-details .detail-name {
+        padding: 20px 0;
+        text-align: center;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    #screen-user #screen-details .detail-members {
+        margin: 0 auto 20px;
+        text-align: center;
+        width: 90%;
+    }
+        #screen-user #screen-details .detail-members .member {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 21px;
+            background-color: #333;
+        }
+            #screen-user #screen-details .detail-members .member.going:after {
+                content: '';
+                position: absolute;
+                right: 0; bottom: 0;
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                border-radius: 8px;
+                background-color: #0c0;
+            }
+    #screen-user #screen-details .detail-time {
+        text-align: center;
+    }
+    #screen-user #screen-details .detail-place {
+        text-align: center;
+    }
+#screen-user #modal-create {
+}
+    #screen-user #modal-create .next-step.button {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        background-color: #333;
+        z-index: 1;
+        text-align: center;
+        color: #efefef;
+        font-size: 14px;
+    }
+        #screen-user #modal-create .next-step.button:active {
+            background-color: #444;
+        }
+    #screen-user #modal-create .list {
+        padding: 30px 0;
+        text-align: center;
+    }
+        #screen-user #modal-create .list .item {
+        }
+            #screen-user #modal-create .list .item input {
+                vertical-align: top;
+                height: 44px;
+                font-size: 14px;
+            }
+        #screen-user #modal-create .list .add {
+            width: 70%;
+            height: 44px;
+            line-height: 44px;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 2px dashed #ccc;
+            color: #999;
+        }
+    #screen-user #modal-create #create-step-1 {
+    }
+    #screen-user #modal-create #create-step-2 {
+    }
+        #screen-user #modal-create #create-step-2 .search {
+            position: absolute;
+            top: 0; left: 0;
+            padding: 0 20px;
+            width: 100%;
+            height: 44px;
+            background-color: #fff;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid #eee;
+        }
+        #screen-user #modal-create #create-step-2 .friends {
+            position: absolute;
+            left: 0; top: 44px;
+            height: calc(100% - 44px);
+            width: 100%;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+            #screen-user #modal-create #create-step-2 .friends .friend {
+                position: relative;
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+                #screen-user #modal-create #create-step-2 .friends .friend.selected:after {
+                    content: '';
+                    position: absolute;
+                    top: 12px; right: 15px;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 12px;
+                    background-color: #070;
+                    display: block;
+                }
+    #screen-user #modal-create #create-step-3 {
+    }
+    #screen-user #modal-create #create-step-4 {
+    }
+        #screen-user #modal-create #create-step-4 h2 {
+            text-align: center;
+        }
+        #screen-user #modal-create #create-step-4 .place input {
+            width: 70%;
+            padding: 3px 20px;
+        }
+
+
+
+

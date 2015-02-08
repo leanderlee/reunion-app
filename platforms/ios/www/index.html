@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Reunion</title>
+    </head>
+    <body>
+        <div class="app">
+            <div id="screen-login">
+                <h1>Reunion</h1>
+                <a id="facebook">Sign In with Facebook</a>
+            </div>
+            <div id="screen-user">
+                <div class="overlay">
+                    <div id="overlay-notifications">
+                        <div class="notifications">
+                            <div class="notification">
+                                <div class="notification-image"></div>
+                                <div class="notification-description"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <a class="back button">&lt;</a>
+                    <div class="title">Reunion</div>
+                    <a class="button" id="notif-button">
+                        <div id="bubble" class="hidden">1</div>
+                        <div id="bell"></div>
+                    </a>
+                </div>
+                <div id="screen-reunions" class="subview screen">
+                    <a class="create-reunion"></a>
+                    <div class="no-reunions">No reunions.</div>
+                    <div class="reunions">
+                        <a class="reunion">
+                            <div class="reunion-name">Reunion Title blabha lkbalbaljdkl sjalkfj dslkajfkld sajklfjdklsa jkldsa</div>
+                            <div class="reunion-members">
+                                <div class="member"></div>
+                                <div class="member"></div>
+                                <div class="member"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="screen-details" class="subview screen" data-id="0">
+                    <div class="detail-name">Soccer Club Reunion</div>
+                    <div class="detail-members">
+                        <div class="member going"></div>
+                        <div class="member going"></div>
+                        <div class="member going"></div>
+                        <div class="member"></div>
+                        <div class="member"></div>
+                        <div class="member"></div>
+                    </div>
+                    <div class="detail-time">
+                        <h2>When?</h2>
+                        <div class="no-date">Poll still happening</div>
+                        <div class="date"></div>
+                    </div>
+                    <div class="detail-place">
+                        <h2>Where?</h2>
+                        <div class="no-place">Poll still happening</div>
+                        <div class="place"></div>
+                    </div>
+                </div>
+                <div id="screen-dates" class="subview screen" data-id="0">
+                    <div class="dates">
+                        <div class="date"></div>
+                        <div class="date"></div>
+                        <div class="date"></div>
+                    </div>
+                    <div class="add-date">Suggest another time</div>
+                </div>
+                <div id="screen-places" class="subview screen" data-id="0">
+                    <div class="dates">
+                        <div class="date"></div>
+                        <div class="date"></div>
+                        <div class="date"></div>
+                    </div>
+                    <div class="add-date">Suggest another time</div>
+                </div>
+
+                <div id="modal-pick-time" class="modal screen">
+                    <div class="navigation">
+                        <a class="back button">&lt;</a>
+                        <div class="title">Pick a time</div>
+                        <a class="save button">Save</a>
+                    </div>
+                    <div class="choose-date">
+                        You pick a date here.
+                    </div>
+                </div>
+
+                <div id="modal-pick-place" class="modal screen">
+                    <div class="navigation">
+                        <a class="back button">&lt;</a>
+                        <div class="title">Pick a place</div>
+                        <a class="save button">Save</a>
+                    </div>
+                    <div class="choose-place">
+                        You pick a place here.
+                    </div>
+                </div>
+
+                <div id="modal-create" class="modal screen">
+                    <div class="navigation">
+                        <div class="back button">&lt;</div>
+                        <div class="title">Creating a Reunion</div>
+                        <div class="close button">x</div>
+                    </div>
+                    <div id="create-step-1" class="subview screen" class="step">
+                        <h1>Name your reunion</h1>
+                        <input type="text" class="name" placeholder="Lorem Ipsum">
+                        <div class="next-step button">Save Name</div>
+                    </div>
+                    <div id="create-step-2" class="subview screen" class="step">
+                        <input class="search" placeholder="Lorem Ipsum">
+                        <div class="friends">
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend selected">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Leander the Bb</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                            <div class="friend">
+                                <div class="friend-pic"></div>
+                                <div class="friend-name">Mark Zuckerberg</div>
+                            </div>
+                        </div>
+                        <div class="next-step button">Invite Friends</div>
+                    </div>
+                    <div id="create-step-3" class="subview screen" class="step">
+                        <div class="list">
+                            <div class="item date">
+                                <input type="date" value="2015-02-08">
+                                <input type="time" value="01:00:00">
+                            </div>
+                            <a class="add date">Pick a Date</a>
+                        </div>
+                        <div class="next-step button">Finish Setting Times</div>
+                    </div>
+                    <div id="create-step-4" class="subview screen" class="step">
+                        <h2>Pick where you want to go</h2>
+                        <div class="list">
+                            <div class="item place">
+                                <input type="text" placeholder="Pick a Place">
+                            </div>
+                            <a class="add place">Pick a Place</a>
+                        </div>
+                        <div class="next-step button">Finish Picking Places</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="cordova_plugins.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
